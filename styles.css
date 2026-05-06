@@ -1,0 +1,352 @@
+/* =============================================
+   Marco Antonio Gómez Fuentes — styles.css
+   Aesthetic: Editorial / Utilitarian / Sharp
+   ============================================= */
+
+:root {
+  --bg: #0e0e0e;
+  --surface: #161616;
+  --border: #2a2a2a;
+  --accent: #c8f542;
+  --accent-dim: #9ab832;
+  --text: #e8e8e8;
+  --text-muted: #888;
+  --red: #e84040;
+  --white: #ffffff;
+  --font-display: 'Arial Narrow', Arial, sans-serif;
+  --font-mono: 'Courier New', Courier, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.75;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100% !important;
+  width: 100%;
+  margin: 0 !important;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: var(--surface);
+  border-bottom: 2px solid var(--accent);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  flex-shrink: 0;
+}
+
+header ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+
+header ul li {
+  display: inline-block;
+}
+
+header ul li a {
+  display: block;
+  padding: 1.1rem 1.2rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+header ul li a:hover {
+  color: var(--white);
+  border-bottom-color: var(--accent);
+}
+
+header ul li a.active_page {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+header ul li.logo {
+  font-size: 1.4rem;
+  color: var(--accent);
+  padding: 0 1rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+}
+
+/* ========== SOCIAL BUTTONS ========== */
+.right {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.social-btn {
+  display: inline-block;
+  padding: 0.4rem 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+}
+
+.twitter-btn {
+  color: var(--text-muted);
+  border-color: #333;
+}
+
+.twitter-btn:hover {
+  background: #000;
+  color: var(--white);
+  border-color: #555;
+}
+
+.facebook-btn {
+  color: var(--text-muted);
+  border-color: #333;
+}
+
+.facebook-btn:hover {
+  background: #1877f2;
+  color: var(--white);
+  border-color: #1877f2;
+}
+
+/* ========== MAIN LAYOUT ========== */
+main {
+  display: flex;
+  flex-direction: row;
+  flex: auto;
+  overflow: hidden;
+}
+
+/* ========== ARTICLE ========== */
+article {
+  flex: 2;
+  padding: 3rem 3.5rem;
+  overflow-y: auto;
+  border-right: 1px solid var(--border);
+}
+
+article h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+article h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  font-size: 1.6rem;
+  color: var(--accent);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+article h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 2.5rem 0 0.75rem;
+}
+
+article p {
+  color: #bbb;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.85;
+}
+
+article a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--accent-dim);
+  padding-bottom: 1px;
+  transition: color 0.2s;
+}
+
+article a:hover {
+  color: var(--white);
+}
+
+article a:visited {
+  color: var(--accent-dim);
+}
+
+article hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+article blockquote {
+  border-left: 3px solid var(--accent);
+  padding: 0.75rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--surface);
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+article ul, article ol {
+  padding-left: 1.5rem;
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+article li {
+  margin-bottom: 0.4rem;
+}
+
+/* ========== SMART THUMBNAIL ========== */
+img.small {
+  width: 180px;
+  cursor: pointer;
+  display: block;
+  margin: 1rem 0;
+  border: 2px solid var(--border);
+  transition: width 0.4s ease, border-color 0.3s;
+}
+
+img:not(.small) {
+  cursor: pointer;
+  display: block;
+  max-width: 100%;
+  margin: 1rem 0;
+  border: 2px solid var(--accent);
+  transition: width 0.4s ease, border-color 0.3s;
+}
+
+/* ========== ASIDE ========== */
+aside {
+  flex: 1;
+  padding: 2rem 1.5rem;
+  overflow-y: auto;
+  background: var(--surface);
+}
+
+aside p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 1rem 2rem;
+  flex-shrink: 0;
+}
+
+footer p {
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========== TWITTER EMBED ========== */
+.twitter-tweet {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+.twitter-tweet a {
+  color: var(--accent);
+  font-size: 0.8rem;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    padding: 0.75rem 1rem;
+  }
+
+  header ul {
+    gap: 0;
+  }
+
+  header ul li a {
+    padding: 0.6rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .right {
+    padding: 0.5rem 0;
+  }
+
+  article {
+    padding: 1.75rem 1.25rem;
+  }
+
+  article h1 {
+    font-size: 2.8rem;
+  }
+
+  aside {
+    padding: 1.25rem;
+  }
+}
